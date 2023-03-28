@@ -24,7 +24,13 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Fprintf(w, "This request is being served by sever %s\n", hostname)
+	prefix := "API"
+
+	if customPrefix := os.Getenv("CUSTOM_PREFIX"); customPrefix != "" {
+		prefix = customPrefix
+	}
+
+	fmt.Fprintf(w, "%s: This request is being served by sever %s\n", prefix, hostname)
 }
 
 func main() {
