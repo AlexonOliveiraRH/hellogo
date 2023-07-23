@@ -30,7 +30,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 		prefix = customPrefix
 	}
 
-	fmt.Fprintf(w, "%s: This request is being served by sever %s\n", prefix, hostname)
+	fmt.Fprintf(w, "%s: This request is being served by server %s\n", prefix, hostname)
 }
 
 func main() {
