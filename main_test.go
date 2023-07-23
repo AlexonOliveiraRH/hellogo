@@ -20,7 +20,7 @@ func TestRootHandler(t *testing.T) {
 	hostname, err := os.Hostname()
 	a.NoError(err)
 
-	exp := fmt.Sprintf("API: This request is being served by sever %s\n", hostname)
+	exp := fmt.Sprintf("API: This request is being served by server %s\n", hostname)
 
 	res, err := http.Get(ts)
 	a.NoError(err)
