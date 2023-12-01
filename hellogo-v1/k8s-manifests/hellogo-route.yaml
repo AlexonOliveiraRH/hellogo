@@ -4,12 +4,10 @@ metadata:
   labels:
     app: hellogo
   name: hellogo
+  namespace: demo
 spec:
   port:
-    targetPort: 8080
-  tls:
-    insecureEdgeTerminationPolicy: Redirect
-    termination: edge
+    targetPort: 3000
   to:
     kind: Service
     name: hellogo

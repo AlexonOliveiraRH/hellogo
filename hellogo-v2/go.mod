@@ -1,4 +1,4 @@
-module github.com/AlexonOliveiraRH/hellogo
+module github.com/AlexonOliveiraRH/hellogo/hellogo-v2
 
 go 1.20
 

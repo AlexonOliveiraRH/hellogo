@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: hellogo
+  name: hellogo
+  namespace: demo
+spec:
+  port:
+    targetPort: 3000
+  to:
+    kind: Service
+    name: hellogo
+    weight: 100
+  wildcardPolicy: None

@@ -1,0 +1,18 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  annotations:
+  name: hellogo-destinationrule
+  namespace: demo
+spec:
+  host: hellogo
+  subsets:
+  - labels:
+      version: v1
+    name: v1
+  - labels:
+      version: v2
+    name: v2
+  trafficPolicy:
+    loadBalancer:
+      simple: ROUND_ROBIN
