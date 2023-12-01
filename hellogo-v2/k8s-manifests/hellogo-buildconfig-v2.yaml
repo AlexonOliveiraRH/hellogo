@@ -1,0 +1,28 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    app: hellogo
+    version: v2
+  name: hellogo-v2
+  namespace: demo
+spec:
+  failedBuildsHistoryLimit: 5
+  output:
+    to:
+      kind: ImageStreamTag
+      name: hellogo:latest
+  runPolicy: Serial
+  source:
+    git:
+      uri: https://github.com/AlexonOliveiraRH/hellogo.git
+    contextDir: hellogo-v2
+    type: Git
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: golang:1.17-ubi8
+        namespace: openshift
+    type: Source
+  successfulBuildsHistoryLimit: 5
