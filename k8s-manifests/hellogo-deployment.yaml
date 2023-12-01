@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: hellogo
-  name: hellogo
+  name: hellogo-v1
 spec:
   progressDeadlineSeconds: 600
   replicas: 2
@@ -11,6 +11,7 @@ spec:
   selector:
     matchLabels:
       app: hellogo
+      version: v1
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -19,8 +20,11 @@ spec:
   template:
     metadata:
       creationTimestamp: null
+      annotations:
+        sidecar.istio.io/inject: "true"
       labels:
         app: hellogo
+        version: v1
     spec:
       containers:
       - image: image-registry.openshift-image-registry.svc:5000/cicd/hellogo:latest

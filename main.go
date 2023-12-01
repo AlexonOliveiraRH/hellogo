@@ -24,7 +24,7 @@ func rootHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	prefix := "API"
+	prefix := "API v1"
 
 	if customPrefix := os.Getenv("CUSTOM_PREFIX"); customPrefix != "" {
 		prefix = customPrefix
