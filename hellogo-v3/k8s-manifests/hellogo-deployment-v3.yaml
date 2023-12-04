@@ -1,4 +1,4 @@
-apiVersion: apps/v3
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
@@ -29,7 +29,7 @@ spec:
         version: v3
     spec:
       containers:
-      - image: image-registry.openshift-image-registry.svc:5000/cicd/hellogo:latest
+      - image: image-registry.openshift-image-registry.svc:5000/demo/hellogo:v3
         imagePullPolicy: IfNotPresent
         name: hellogo-v3
         resources: {}

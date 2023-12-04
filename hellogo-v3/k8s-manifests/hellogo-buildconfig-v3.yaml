@@ -11,7 +11,7 @@ spec:
   output:
     to:
       kind: ImageStreamTag
-      name: hellogo:latest
+      name: hellogo:v3
   runPolicy: Serial
   source:
     git:
@@ -22,7 +22,7 @@ spec:
     sourceStrategy:
       from:
         kind: ImageStreamTag
-        name: golang:1.17-ubi8
+        name: golang:1.18-ubi8
         namespace: openshift
     type: Source
   successfulBuildsHistoryLimit: 5
