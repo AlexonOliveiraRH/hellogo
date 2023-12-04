@@ -1,2 +1,2 @@
 #!/bin/bash
-while true; do curl -s http://$(oc get route istio-ingressgateway -n user1-istio -o jsonpath='{.spec.host}'); sleep 1; done
+while true; do curl -s http://$(oc get route istio-ingressgateway -n istio-system -o jsonpath='{.spec.host}'); sleep 1; done
