@@ -38,7 +38,6 @@ while true; do
         echo "Total requests: $total_requests"
         echo "------------------------------------------"
     fi
-
-    sleep 1
+#
+#    sleep 1
 done
-
