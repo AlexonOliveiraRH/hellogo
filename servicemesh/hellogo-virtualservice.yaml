@@ -19,10 +19,16 @@ spec:
         port:
           number: 3000
         subset: v1
-      weight: 90
+      weight: 34
     - destination:
         host: hellogo
         port:
           number: 3000
         subset: v2
-      weight: 10
+      weight: 33
+    - destination:
+        host: hellogo
+        port:
+          number: 3000
+        subset: v3
+      weight: 33
